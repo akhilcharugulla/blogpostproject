@@ -1,0 +1,27 @@
+server:
+  port: 8081
+ 
+spring:
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ANT_PATH_MATCHER
+      
+  datasource:
+    url: jdbc:mysql://localhost:3306/blogpost
+    username: root
+    password: akhil
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+#  profiles:
+#    active: prod
+
+#  security:
+#    user:
+#      name: akhil
+#      password: abc  
+#      roles: ADMIN   
