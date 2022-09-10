@@ -32,32 +32,32 @@ public class PostController {
 	//@ApiOperation is a swagger annotation that gives info on each method
 	
 	@ApiOperation(value = "creates a post", notes="This api creates a new post and adds post to db")
-	@PostMapping("v1/createpost")
+	@PostMapping("/v1/createpost")
 	public ResponseEntity<BlogPostDto> createPost(@Valid @RequestBody BlogPostDto postdto) {
 		return new ResponseEntity<>(pService.createPost(postdto), HttpStatus.CREATED);
 	}
 
-	@GetMapping("v1/allposts")
+	@GetMapping("/v1/allposts")
 	public List<BlogPostDto> getAllPosts() {
 		return pService.getAllPosts();
 	}
 
-	@GetMapping("v1/allpostspagination")
+	@GetMapping("/v1/allpostspagination")
 	public PayloadPostResponse getAllPostsPagination(@RequestParam(value="pageNo", required=false)int pageNo,@RequestParam(value="pageSize", required = false)int pageSize ) {
 		return pService.getAllPostsPagination(pageNo, pageSize);
 	}
 	
-	@GetMapping("v1/getpost/{id}")
+	@GetMapping("/v1/getpost/{id}")
 	public ResponseEntity<BlogPostDto> getPostById(@PathVariable long id) {
 		return new ResponseEntity<>(pService.getPostById(id), HttpStatus.OK);
 	}
 
-	@PutMapping("v1/{id}")
+	@PutMapping("/v1/{id}")
 	public ResponseEntity<BlogPostDto> updatePost(@PathVariable long id,@Valid @RequestBody BlogPostDto newposttoUpdate) {
 		return new ResponseEntity<>(pService.updatePost(id, newposttoUpdate), HttpStatus.OK);
 	}
 
-	@DeleteMapping("v1/{id}")
+	@DeleteMapping("/v1/{id}")
 	public void deletePost(@PathVariable long id) {
 		 pService.deletePostById(id);
 	}

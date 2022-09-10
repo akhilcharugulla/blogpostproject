@@ -11,11 +11,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@SpringBootApplication
-@EnableJpaRepositories("udemy.blogpost.demo.repository")
-@EntityScan("udemy.blogpost.demo.entity")
-@ComponentScan({"udemy.blogpost.demo"})//,"udemy.blogpost.dto"
+//@EnableJpaRepositories("udemy.blogpost.demo.repository")
+//@EntityScan("udemy.blogpost.demo.entity")
+//@ComponentScan({"udemy.blogpost.demo"})//,"udemy.blogpost.dto"
 @EnableSwagger2
+@SpringBootApplication
 public class TysonApplication implements CommandLineRunner{
 	//for swagger the url
 	//http://localhost:8081/swagger-ui.html#/

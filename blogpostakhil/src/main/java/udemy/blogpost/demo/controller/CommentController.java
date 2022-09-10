@@ -26,29 +26,29 @@ public class CommentController {
 	@Autowired
 	CommentService cService;
 
-	@PostMapping("v1/{postId}/createcomment")
+	@PostMapping("/v1/{postId}/createcomment")
 	public ResponseEntity<CommentDto> createComment(@PathVariable long postId,@Valid @RequestBody CommentDto commentdto) {
 		return new ResponseEntity<CommentDto>(cService.createComment(postId, commentdto), HttpStatus.CREATED);
 	}
 
-	@GetMapping("v1/{postId}/comment/{commentId}")
+	@GetMapping("/v1/{postId}/comment/{commentId}")
 	public ResponseEntity<CommentDto> getCommentById(@PathVariable long postId, @PathVariable long commentId) {
 		return new ResponseEntity<CommentDto>(cService.getCommentById(postId, commentId), HttpStatus.OK);
 	}
 
-	@GetMapping("v1/getcommentsforpostId/{postId}")
+	@GetMapping("/v1/getcommentsforpostId/{postId}")
 	public List<CommentDto> getCommentForPostId(@PathVariable long postId) {
 		return cService.getCommentsForPostId(postId);
 	}
 
-	@PutMapping("v1/updateComment/{postId}/{commentId}")
+	@PutMapping("/v1/updateComment/{postId}/{commentId}")
 	public ResponseEntity<CommentDto> updateComment(@PathVariable long postId, @PathVariable long commentId,
 			@Valid @RequestBody CommentDto commentdto) {
 		return new ResponseEntity<CommentDto>(cService.updateComment(postId, commentId, commentdto), HttpStatus.OK);
 
 	}
 
-	@DeleteMapping("v1/deletecomment/{commentId}")
+	@DeleteMapping("/v1/deletecomment/{commentId}")
 	public void deleteComment(@PathVariable long commentId) {
 		cService.deleteComment(commentId);
 	}
