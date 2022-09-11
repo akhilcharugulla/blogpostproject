@@ -39,7 +39,7 @@ public class CharuCustomUserDetailsService implements UserDetailsService{
 	}
 	
 	public Collection<GrantedAuthority> getAllGrantedAuthority(List<Authorities> authorities) {
-		return authorities.stream().map(i -> new SimpleGrantedAuthority(i.getAuthorityName())).collect(Collectors.toList());
+		return authorities.stream().map(authority -> new SimpleGrantedAuthority(authority.getAuthorityname())).collect(Collectors.toList());
 	}
 
 }
