@@ -23,6 +23,9 @@ import udemy.blogpost.demo.repository.UserRepository;
 @Service
 public class CharuCustomUserDetailsService implements UserDetailsService{
 
+//Note created addUser method in UserController.Skipped the Service layer..
+//The addUser method will add new user
+	
 	@Autowired 
 	UserRepository uRepo;
 	

@@ -20,6 +20,9 @@ import udemy.blogpost.demo.repository.PostRepository;
 @Service
 public class PostServiceImpl implements PostService {
 
+	//Note created addUser method in UserController.Skipped the Service layer..
+	//The addUser method will add new user
+	
 	@Autowired
 	PostRepository pRepo;
 
@@ -38,7 +41,7 @@ public class PostServiceImpl implements PostService {
 	public PayloadPostResponse getAllPostsPagination(int pageNo, int pageSize) {
 		Pageable pageable = PageRequest.of(pageNo, pageSize);
 		Page<BlogPost> posts = pRepo.findAll(pageable);
-		List<BlogPost> listBlogposts = posts.getContent();
+		List<BlogPost> listBlogposts = posts.getContent();   //can use this method also posts.toList()
 		PayloadPostResponse ploadResponse = new PayloadPostResponse();
 		ploadResponse.setBlogposts(listBlogposts);
 		ploadResponse.setPageNo(posts.getNumber());

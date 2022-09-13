@@ -18,6 +18,11 @@ import udemy.blogpost.demo.repository.PostRepository;
 
 @Service
 public class CommentServiceImpl implements CommentService{
+	
+	//Note created addUser method in UserController.Skipped the Service layer..
+	//The addUser method will add new user
+	
+	
 	@Autowired
 	CommentRepository cRepository;
 	
