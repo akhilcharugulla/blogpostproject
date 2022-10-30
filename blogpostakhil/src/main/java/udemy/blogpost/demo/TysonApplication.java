@@ -20,7 +20,6 @@ public class TysonApplication implements CommandLineRunner{
 	//for swagger the url
 	//http://localhost:8081/swagger-ui.html#/
 	
-	
 	@Bean
 	public ModelMapper modelMapper() {
 		return new ModelMapper();

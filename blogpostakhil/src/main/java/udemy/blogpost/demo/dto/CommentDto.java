@@ -12,7 +12,6 @@ public class CommentDto {
 	@ApiModelProperty(value="Comment id. This must be unique")
 	private long id;
 	
-	
 	@NotEmpty
 	@Size(min = 3,message="Name cannot be null or empty")
 	@ApiModelProperty(value="user name. Name cannot be null or empty")
